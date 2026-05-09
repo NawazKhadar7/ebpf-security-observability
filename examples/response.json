@@ -1,0 +1,24 @@
+{
+  "metrics": {
+    "accounted": true,
+    "denied": 0,
+    "kernel_attached": false,
+    "malformed": 0,
+    "packets": 8,
+    "passed": 8,
+    "rate_dropped": 0
+  },
+  "output": {
+    "actions": [
+      "pass",
+      "pass",
+      "pass",
+      "pass",
+      "pass",
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "execution": "Python packet/policy reference, not in-kernel eBPF"
+  }
+}
