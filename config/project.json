@@ -1,0 +1,47 @@
+{
+  "algorithm": "Verify packet bounds before reading fields. Deny source addresses before rate accounting. Track per-source windows and count every action. XDP returns PASS or DROP at ingress. Reference: https://docs.kernel.org/bpf/ and https://github.com/libbpf/libbpf .",
+  "architecture": "Reference: Ethernet bytes \u2192 IPv4 parser \u2192 policy \u2192 counters. Native: XDP hook \u2192 map policy \u2192 verdict; tracepoint \u2192 ring buffer. User-space control supplies explicit planned commands.",
+  "data_model": "IPv4 addresses are network-order four-byte map keys. Deny values are one byte. Native counters: 0 pass, 1 deny, 2 rate, 3 malformed. Trace events carry attempted target UID and current UID.",
+  "description": "A packet-policy reference with original XDP filtering and setuid tracepoint source plus a deliberate dry-run deployment workflow.",
+  "design": "Loading code into a kernel changes networking behavior, so the loader prints a plan by default and only attaches with explicit --apply. It never selects an interface or assumes privileges automatically.",
+  "families": [
+    "allow",
+    "deny",
+    "bursts",
+    "malformed",
+    "udp",
+    "tcp"
+  ],
+  "family_notes": [
+    "Pass valid packets from distinct permitted sources.",
+    "Drop every packet from a denied source.",
+    "Rate-limit a single source beyond eight packets per window.",
+    "Reject truncated Ethernet/IPv4 packets.",
+    "Parse UDP-tagged IPv4 frames safely.",
+    "Parse TCP-tagged IPv4 frames safely."
+  ],
+  "file_count": 165,
+  "limitations": "No BPF compiler, libbpf headers, bpftool or privileged kernel attachment was available. Kernel programs are uncompiled/unverified sources. Python policy is global per source; native rate buckets are per CPU, so multi-CPU aggregate limits differ. Setuid tracing observes attempts, not successful unauthorized privilege escalation. VLAN, IPv6 and checksum enforcement are not implemented; non-IPv4 traffic passes.",
+  "numpy": false,
+  "operations": "Use a disposable Linux VM or dedicated test interface. Compile against that kernel and libbpf. Inspect verifier logs; stage traffic replay before explicit attachment. Keep an out-of-band way to detach XDP.",
+  "scope": "Python binary packet builder/parser, deny/rate policy and exact counters. Native C XDP bounds checks, deny map, per-CPU LRU rate buckets, action counters and setuid-attempt ring-buffer tracepoint. Control helpers produce argument-safe bpftool/ip plans.",
+  "security": "Kernel sources are unexecuted. Attaching XDP can drop network traffic. The loader defaults to printing a plan; use only an explicitly selected test interface and review verifier output first.",
+  "sizes": [
+    8,
+    16,
+    24,
+    32,
+    48,
+    64
+  ],
+  "slug": "ebpf-security-observability",
+  "title": "eBPF Network Observability & Security Agent",
+  "topics": [
+    "ebpf",
+    "xdp",
+    "network-observability",
+    "linux",
+    "systems"
+  ],
+  "workload_count": 36
+}
