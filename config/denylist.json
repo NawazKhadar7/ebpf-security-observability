@@ -1,0 +1,9 @@
+{
+  "automatic_attachment": false,
+  "native_buckets": "per CPU",
+  "packets_per_window": 8,
+  "sources": [
+    "10.0.0.9"
+  ],
+  "window_ns": 1000000000
+}
