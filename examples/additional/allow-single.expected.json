@@ -1,0 +1,27 @@
+{
+  "checks": {
+    "accounted": {
+      "equals": true
+    },
+    "denied": {
+      "equals": 0
+    },
+    "kernel_attached": {
+      "equals": false
+    },
+    "malformed": {
+      "equals": 0
+    },
+    "packets": {
+      "equals": 1
+    },
+    "passed": {
+      "equals": 1
+    },
+    "rate_dropped": {
+      "equals": 0
+    }
+  },
+  "rationale": "The packet must increment exactly one pass counter.",
+  "synthetic": true
+}
