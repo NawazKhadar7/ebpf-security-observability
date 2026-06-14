@@ -1,0 +1,27 @@
+{
+  "checks": {
+    "accounted": {
+      "equals": true
+    },
+    "denied": {
+      "equals": 1
+    },
+    "kernel_attached": {
+      "equals": false
+    },
+    "malformed": {
+      "equals": 0
+    },
+    "packets": {
+      "equals": 1
+    },
+    "passed": {
+      "equals": 0
+    },
+    "rate_dropped": {
+      "equals": 0
+    }
+  },
+  "rationale": "Deny matching takes effect before rate accounting.",
+  "synthetic": true
+}
