@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "family": {
+      "enum": [
+        "allow",
+        "deny",
+        "bursts",
+        "malformed",
+        "udp",
+        "tcp"
+      ]
+    },
+    "id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "seed": {
+      "maximum": 4294967295,
+      "minimum": 0,
+      "type": "integer"
+    },
+    "size": {
+      "maximum": 10000,
+      "minimum": 1,
+      "type": "integer"
+    }
+  },
+  "required": [
+    "id",
+    "family",
+    "size",
+    "seed"
+  ],
+  "type": "object"
+}
