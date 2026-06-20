@@ -1,0 +1,27 @@
+{
+  "checks": {
+    "accounted": {
+      "equals": true
+    },
+    "denied": {
+      "equals": 0
+    },
+    "kernel_attached": {
+      "equals": false
+    },
+    "malformed": {
+      "equals": 0
+    },
+    "packets": {
+      "equals": 7
+    },
+    "passed": {
+      "equals": 7
+    },
+    "rate_dropped": {
+      "equals": 0
+    }
+  },
+  "rationale": "Per-source counters must not combine unrelated senders.",
+  "synthetic": true
+}
