@@ -1,0 +1,27 @@
+{
+  "checks": {
+    "accounted": {
+      "equals": true
+    },
+    "denied": {
+      "equals": 0
+    },
+    "kernel_attached": {
+      "equals": false
+    },
+    "malformed": {
+      "equals": 48
+    },
+    "packets": {
+      "equals": 48
+    },
+    "passed": {
+      "equals": 0
+    },
+    "rate_dropped": {
+      "equals": 0
+    }
+  },
+  "rationale": "Reject truncated Ethernet/IPv4 packets.",
+  "synthetic": true
+}
