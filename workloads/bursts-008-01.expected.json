@@ -1,0 +1,27 @@
+{
+  "checks": {
+    "accounted": {
+      "equals": true
+    },
+    "denied": {
+      "equals": 0
+    },
+    "kernel_attached": {
+      "equals": false
+    },
+    "malformed": {
+      "equals": 0
+    },
+    "packets": {
+      "equals": 8
+    },
+    "passed": {
+      "equals": 8
+    },
+    "rate_dropped": {
+      "equals": 0
+    }
+  },
+  "rationale": "Rate-limit a single source beyond eight packets per window.",
+  "synthetic": true
+}
