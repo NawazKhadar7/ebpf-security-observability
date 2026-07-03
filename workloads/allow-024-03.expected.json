@@ -1,0 +1,27 @@
+{
+  "checks": {
+    "accounted": {
+      "equals": true
+    },
+    "denied": {
+      "equals": 0
+    },
+    "kernel_attached": {
+      "equals": false
+    },
+    "malformed": {
+      "equals": 0
+    },
+    "packets": {
+      "equals": 24
+    },
+    "passed": {
+      "equals": 24
+    },
+    "rate_dropped": {
+      "equals": 0
+    }
+  },
+  "rationale": "Pass valid packets from distinct permitted sources.",
+  "synthetic": true
+}
