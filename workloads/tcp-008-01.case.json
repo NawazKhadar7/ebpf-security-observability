@@ -1,0 +1,6 @@
+{
+  "family": "tcp",
+  "id": "tcp-008-01",
+  "seed": 256,
+  "size": 8
+}
