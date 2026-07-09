@@ -1,0 +1,27 @@
+{
+  "checks": {
+    "accounted": {
+      "equals": true
+    },
+    "denied": {
+      "equals": 64
+    },
+    "kernel_attached": {
+      "equals": false
+    },
+    "malformed": {
+      "equals": 0
+    },
+    "packets": {
+      "equals": 64
+    },
+    "passed": {
+      "equals": 0
+    },
+    "rate_dropped": {
+      "equals": 0
+    }
+  },
+  "rationale": "Drop every packet from a denied source.",
+  "synthetic": true
+}
